@@ -7,6 +7,7 @@ import (
 	"net/http"
 )
 
+// publicの関数は先頭大文字
 func ApiHandler(w http.ResponseWriter, r *http.Request) {
 	result, err := doSomething("input")
 	if err != nil {

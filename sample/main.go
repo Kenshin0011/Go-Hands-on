@@ -4,6 +4,8 @@ package main
 import (
 	"errors"
 	"fmt"
+	"net/http"
+	"sample/onigiri"
 )
 
 func main() {
@@ -14,8 +16,8 @@ func main() {
 		return
 	}
 	fmt.Println("Result:", result)
-	// http.HandleFunc("/api", onigiri.ApiHandler)
-	// http.ListenAndServe(":8080", nil)
+	http.HandleFunc("/api", onigiri.ApiHandler)
+	http.ListenAndServe(":8080", nil)
 }
 
 func doSomething(input string) (string, error) {
